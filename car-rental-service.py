@@ -1,4 +1,4 @@
-class vehicle:
+class Vehicle:
     brand = ""
     model = ""
     year = 0
@@ -10,4 +10,10 @@ class vehicle:
         self.year = year
         self.rental_price_per_day = rental_price_per_day
 
-        
+    def display_info(self) :
+        print(f"Car: {self.brand} {self.model}, Year: {self.year}, Rental Price: ${self.rental_price_per_day}/day")
+
+
+myCar = Vehicle("Honda", "CRV", "2003", 20)
+
+myCar.display_info()
