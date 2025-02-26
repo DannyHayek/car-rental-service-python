@@ -17,7 +17,7 @@ class Vehicle:
         
         print(f"Rental cost for {self.brand} {self.model} for {days} days: ${days * self.rental_price_per_day}")
 
-class VehicleExpanded (Vehicle) :
+class Car (Vehicle) :
     seating_capacity = 0
 
     def __init__(self, brand, model, year, rental_price_per_day, seating_capacity):
@@ -36,7 +36,7 @@ class Bike (Vehicle):
         self.engine_capacity = engine_capacity
 
 
-myCar = VehicleExpanded ("Honda", "CRV", "2003", 20, 5)
+myCar = Car ("Honda", "CRV", "2003", 20, 5)
 
 myCar.display_info()
 myCar.calculate_rental_cost(10)
