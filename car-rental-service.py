@@ -24,6 +24,9 @@ class VehicleExpanded (Vehicle) :
         super().__init__(brand, model, year, rental_price_per_day)
         self.seating_capacity = seating_capacity
 
+    def display_info(self):
+        print(f"Car: {self.brand} {self.model}, Year: {self.year}, Seats: {self.seating_capacity}, Rental Price: ${self.rental_price_per_day}/day")
+
 
 #class Bike (Vehicle):
 
@@ -31,4 +34,3 @@ myCar = VehicleExpanded ("Honda", "CRV", "2003", 20, 5)
 
 myCar.display_info()
 myCar.calculate_rental_cost(10)
-print(myCar.seating_capacity)
