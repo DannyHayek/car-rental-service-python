@@ -28,7 +28,13 @@ class VehicleExpanded (Vehicle) :
         print(f"Car: {self.brand} {self.model}, Year: {self.year}, Seats: {self.seating_capacity}, Rental Price: ${self.rental_price_per_day}/day")
 
 
-#class Bike (Vehicle):
+class Bike (Vehicle):
+    engine_capacity = 0
+
+    def __init__(self, brand, model, year, rental_price_per_day, engine_capacity):
+        super().__init__(brand, model, year, rental_price_per_day)
+        self.engine_capacity = engine_capacity
+
 
 myCar = VehicleExpanded ("Honda", "CRV", "2003", 20, 5)
 
