@@ -47,6 +47,16 @@ class Bike (Vehicle):
 def show_vehicle_info (Vehicle):
     Vehicle.display_info()
 
+def options ():
+    print("Welcome to your vehicle rental service manager!")
+    print("Please select your action:")
+    print("1: Show cars")
+    print("2: Show bikes")
+    print("3: Calculate rental costs for a vehicle")
+    print("4: Modify rental costs for a vehicle")
+
+# def calculateRental (Vehicle, days):
+
 
 car1 = Car ("Honda", "CRV", "2003", 10, 5)
 car2 = Car ("Mitsubishi", "Outlander", "2014", 30, 7)
@@ -70,8 +80,6 @@ show_vehicle_info(bike3)
 
 print("\n===========================================")
 
-# myCar.display_info()
-# myCar.calculate_rental_cost(10)
+# action = 0
 
-# myCar.set_rental_price_per_day(int(input("Price per day")))
-# print(myCar.get_rental_price_per_day())
+# while 0 <
