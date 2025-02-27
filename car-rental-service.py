@@ -44,7 +44,13 @@ class Bike (Vehicle):
         print(f"Bike: {self.brand} {self.model}, Year: {self.year}, Engine: {self.engine_capacity}, Rental Price: ${self.rental_price_per_day}/day")
 
 
-# myCar = Car ("Honda", "CRV", "2003", 20, 5)
+def show_vehicle_info (Vehicle):
+    Vehicle.display_info()
+
+
+myCar = Car ("Honda", "CRV", "2003", 20, 5)
+
+show_vehicle_info(myCar)
 
 # myCar.display_info()
 # myCar.calculate_rental_cost(10)
