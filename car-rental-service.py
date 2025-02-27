@@ -78,8 +78,9 @@ def calculateRental(Vehicle, days):
     for vehicle in myCars:
         if Vehicle == vehicle.model:
             return vehicle.calculate_rental_cost(days)
+
+    print("That model does not exist!")
     
-    return "This model does not exist!"
 
 def changeRental(Vehicle, newPrice):
     for vehicle in myBikes:
@@ -119,13 +120,12 @@ while option != 5 :
         showBikes()
 
     if option == 3:
-        print(calculateRental(input("\nWhich model: "), int(input("\nHow many days: "))))
+        calculateRental(input("\nWhich model: "), int(input("\nHow many days: ")))
 
     if option == 4:
         changeRental(input("\nWhich model: "), int(input("\nNew rental price: ")))
 
+    if option > 5 or option < 1:
+        print("That is not a valid option!")
 
-
-
-
-    
+print("Thank you for using Bob's Car Rental Service!")
