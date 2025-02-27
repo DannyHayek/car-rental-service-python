@@ -58,6 +58,12 @@ def options ():
 
     return int(input("Which option do you wish to perform: "))
 
+def showCars ():
+    for car in myCars :
+        print("")
+        show_vehicle_info(car)
+        print("")
+
 
 car1 = Car ("Honda", "CRV", "2003", 10, 5)
 car2 = Car ("Mitsubishi", "Outlander", "2014", 30, 7)
@@ -86,15 +92,14 @@ print("\n===========================================")
 
 print(bike1.calculate_rental_cost(10))
 
-# option = 0
+option = 0
 
-# while option != 5 :
-#     if option == 0:
-#         option = options()
+while option != 5 :
+    option = options()
 
-#     if option == 1:
-#         for car in myCars :
-#             show_vehicle_info(car)
+    if option == 1:
+        showCars()
 
-#     option = 0
+
+
     
