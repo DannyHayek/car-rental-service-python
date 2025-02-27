@@ -8,13 +8,13 @@ class Vehicle:
         self.brand = brand
         self.model = model
         self.year = year
-        self.rental_price_per_day = rental_price_per_day
+        self.__rental_price_per_day = rental_price_per_day
 
     def display_info(self) :
-        print(f"Car: {self.brand} {self.model}, Year: {self.year}, Rental Price: ${self.rental_price_per_day}/day")
+        print(f"Car: {self.brand} {self.model}, Year: {self.year}, Rental Price: ${self.get_rental_price_per_day}/day")
 
     def calculate_rental_cost(self, days) :
-        print(f"Rental cost for {self.brand} {self.model} for {days} days: ${days * self.rental_price_per_day}")
+        print(f"Rental cost for {self.brand} {self.model} for {days} days: ${days * self.get_rental_price_per_day}")
 
     def set_rental_price_per_day(self, price) :
         self.__rental_price_per_day = price
@@ -30,7 +30,7 @@ class Car (Vehicle) :
         self.seating_capacity = seating_capacity
 
     def display_info(self):
-        print(f"Car: {self.brand} {self.model}, Year: {self.year}, Seats: {self.seating_capacity}, Rental Price: ${self.rental_price_per_day}/day")
+        print(f"Car: {self.brand} {self.model}, Year: {self.year}, Seats: {self.seating_capacity}, Rental Price: ${self.get_rental_price_per_day}/day")
 
 
 class Bike (Vehicle):
@@ -41,7 +41,7 @@ class Bike (Vehicle):
         self.engine_capacity = engine_capacity
 
     def display_info(self):
-        print(f"Bike: {self.brand} {self.model}, Year: {self.year}, Engine: {self.engine_capacity}, Rental Price: ${self.rental_price_per_day}/day")
+        print(f"Bike: {self.brand} {self.model}, Year: {self.year}, Engine: {self.engine_capacity}, Rental Price: ${self.get_rental_price_per_day}/day")
 
 
 def show_vehicle_info (Vehicle):
@@ -55,7 +55,8 @@ def options ():
     print("3: Calculate rental costs for a vehicle")
     print("4: Modify rental costs for a vehicle")
 
-# def calculateRental (Vehicle, days):
+def calculateRental (Vehicle, days):
+    return Vehicle.get_rental_price_per_day() * days
 
 
 car1 = Car ("Honda", "CRV", "2003", 10, 5)
@@ -79,6 +80,8 @@ show_vehicle_info(bike2)
 show_vehicle_info(bike3)
 
 print("\n===========================================")
+
+print(calculateRental(bike1, 10))
 
 # action = 0
 
