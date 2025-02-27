@@ -2,7 +2,7 @@ class Vehicle:
     brand = ""
     model = ""
     year = 0
-    rental_price_per_day = 0
+    __rental_price_per_day = 0
 
     def __init__(self, brand, model, year, rental_price_per_day) :
         self.brand = brand
@@ -15,6 +15,12 @@ class Vehicle:
 
     def calculate_rental_cost(self, days) :
         print(f"Rental cost for {self.brand} {self.model} for {days} days: ${days * self.rental_price_per_day}")
+
+    def set_rental_price_per_day(self, price) :
+        self.__rental_price_per_day = price
+
+    def get_rental_price_per_day(self) :
+        return self.__rental_price_per_day
 
 class Car (Vehicle) :
     seating_capacity = 0
@@ -38,7 +44,10 @@ class Bike (Vehicle):
         print(f"Bike: {self.brand} {self.model}, Year: {self.year}, Engine: {self.engine_capacity}, Rental Price: ${self.rental_price_per_day}/day")
 
 
-myCar = Car ("Honda", "CRV", "2003", 20, 5)
+# myCar = Car ("Honda", "CRV", "2003", 20, 5)
 
-myCar.display_info()
-myCar.calculate_rental_cost(10)
+# myCar.display_info()
+# myCar.calculate_rental_cost(10)
+
+# myCar.set_rental_price_per_day(int(input("Price per day")))
+# print(myCar.get_rental_price_per_day())
