@@ -59,11 +59,19 @@ def options ():
     return int(input("Which option do you wish to perform: "))
 
 def showCars ():
+    print(divider)
     for car in myCars :
-        print("")
         show_vehicle_info(car)
-        print("")
+    print(divider)
 
+
+def showBikes ():
+    print(divider)
+    for bike in myBikes :
+        show_vehicle_info(bike)
+    print(divider)
+
+divider = "=============================================="
 
 car1 = Car ("Honda", "CRV", "2003", 10, 5)
 car2 = Car ("Mitsubishi", "Outlander", "2014", 30, 7)
@@ -76,22 +84,6 @@ bike3 = Bike ("Kawasaki", "Ninja", "2008", 50, 798)
 myCars = [car1, car2, car3]
 myBikes = [bike1, bike2, bike3]
 
-print("===========================================\n")
-
-show_vehicle_info(car1)
-show_vehicle_info(car2)
-show_vehicle_info(car3)
-
-print("\n===========================================\n")
-
-show_vehicle_info(bike1)
-show_vehicle_info(bike2)
-show_vehicle_info(bike3)
-
-print("\n===========================================")
-
-print(bike1.calculate_rental_cost(10))
-
 option = 0
 
 while option != 5 :
@@ -99,6 +91,9 @@ while option != 5 :
 
     if option == 1:
         showCars()
+
+    if option == 2:
+        showBikes()
 
 
 
