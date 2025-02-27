@@ -11,10 +11,10 @@ class Vehicle:
         self.__rental_price_per_day = rental_price_per_day
 
     def display_info(self) :
-        print(f"Car: {self.brand} {self.model}, Year: {self.year}, Rental Price: ${self.get_rental_price_per_day}/day")
+        print(f"Car: {self.brand} {self.model}, Year: {self.year}, Rental Price: ${self.get_rental_price_per_day()}/day")
 
     def calculate_rental_cost(self, days) :
-        print(f"Rental cost for {self.brand} {self.model} for {days} days: ${days * self.get_rental_price_per_day}")
+        print(f"Rental cost for {self.brand} {self.model} for {days} days: ${days * self.get_rental_price_per_day()}")
 
     def set_rental_price_per_day(self, price) :
         self.__rental_price_per_day = price
@@ -49,14 +49,14 @@ def show_vehicle_info (Vehicle):
 
 def options ():
     print("Welcome to your vehicle rental service manager!")
-    print("Please select your action:")
+    print("Enter the number for the action you wish to take.")
     print("1: Show cars")
     print("2: Show bikes")
     print("3: Calculate rental costs for a vehicle")
     print("4: Modify rental costs for a vehicle")
+    print("5: Exit the manager")
 
-def calculateRental (Vehicle, days):
-    return Vehicle.get_rental_price_per_day() * days
+    return int(input("Which option do you wish to perform: "))
 
 
 car1 = Car ("Honda", "CRV", "2003", 10, 5)
@@ -66,6 +66,9 @@ car3 = Car ("Toyota", "FJ Cruiser", 2020, 50, 4)
 bike1 = Bike ("Yamaha", "R1", "2019", 35, 998)
 bike2 = Bike ("Harley-Davidson", "Fat Boy", "2012", 60, 1584)
 bike3 = Bike ("Kawasaki", "Ninja", "2008", 50, 798)
+
+myCars = [car1, car2, car3]
+myBikes = [bike1, bike2, bike3]
 
 print("===========================================\n")
 
@@ -81,8 +84,17 @@ show_vehicle_info(bike3)
 
 print("\n===========================================")
 
-print(calculateRental(bike1, 10))
+print(bike1.calculate_rental_cost(10))
 
-# action = 0
+# option = 0
 
-# while 0 <
+# while option != 5 :
+#     if option == 0:
+#         option = options()
+
+#     if option == 1:
+#         for car in myCars :
+#             show_vehicle_info(car)
+
+#     option = 0
+    
