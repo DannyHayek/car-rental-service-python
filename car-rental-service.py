@@ -48,13 +48,13 @@ def show_vehicle_info (Vehicle):
     Vehicle.display_info()
 
 def options ():
-    print("Welcome to your vehicle rental service manager!")
-    print("Enter the number for the action you wish to take.")
+    print("\nWelcome to your vehicle rental service manager!\n")
+    print("Enter the number for the action you wish to take.\n")
     print("1: Show cars")
     print("2: Show bikes")
     print("3: Calculate rental costs for a vehicle")
     print("4: Modify rental costs for a vehicle")
-    print("5: Exit the manager")
+    print("5: Exit the manager\n")
 
     return int(input("Which option do you wish to perform: "))
 
