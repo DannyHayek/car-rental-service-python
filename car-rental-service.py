@@ -48,8 +48,7 @@ def show_vehicle_info (Vehicle):
     Vehicle.display_info()
 
 def options ():
-    print("\nWelcome to your vehicle rental service manager!\n")
-    print("Enter the number for the action you wish to take.\n")
+    print("\nEnter the number for the action you wish to take.\n")
     print("1: Show cars")
     print("2: Show bikes")
     print("3: Calculate rental costs for a vehicle")
@@ -80,7 +79,18 @@ def calculateRental(Vehicle, days):
         if Vehicle == vehicle.model:
             return vehicle.calculate_rental_cost(days)
     
-    return None
+    return "This model does not exist!"
+
+def changeRental(Vehicle, newPrice):
+    for vehicle in myBikes:
+        if Vehicle == vehicle.model:
+            vehicle.set_rental_price_per_day(newPrice)
+            showBikes()
+    
+    for vehicle in myCars:
+        if Vehicle == vehicle.model:
+            vehicle.set_rental_price_per_day(newPrice)
+            showCars()
 
 divider = "=============================================="
 
@@ -97,6 +107,8 @@ myBikes = [bike1, bike2, bike3]
 
 option = 0
 
+print("\nWelcome to your vehicle rental service manager!\n")
+
 while option != 5 :
     option = options()
 
@@ -108,6 +120,10 @@ while option != 5 :
 
     if option == 3:
         print(calculateRental(input("\nWhich model: "), int(input("\nHow many days: "))))
+
+    if option == 4:
+        changeRental(input("\nWhich model: "), int(input("\nNew rental price: ")))
+
 
 
 
