@@ -48,9 +48,27 @@ def show_vehicle_info (Vehicle):
     Vehicle.display_info()
 
 
-myCar = Car ("Honda", "CRV", "2003", 20, 5)
+car1 = Car ("Honda", "CRV", "2003", 10, 5)
+car2 = Car ("Mitsubishi", "Outlander", "2014", 30, 7)
+car3 = Car ("Toyota", "FJ Cruiser", 2020, 50, 4)
 
-show_vehicle_info(myCar)
+bike1 = Bike ("Yamaha", "R1", "2019", 35, 998)
+bike2 = Bike ("Harley-Davidson", "Fat Boy", "2012", 60, 1584)
+bike3 = Bike ("Kawasaki", "Ninja", "2008", 50, 798)
+
+print("===========================================\n")
+
+show_vehicle_info(car1)
+show_vehicle_info(car2)
+show_vehicle_info(car3)
+
+print("\n===========================================\n")
+
+show_vehicle_info(bike1)
+show_vehicle_info(bike2)
+show_vehicle_info(bike3)
+
+print("\n===========================================")
 
 # myCar.display_info()
 # myCar.calculate_rental_cost(10)
