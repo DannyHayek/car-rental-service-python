@@ -116,16 +116,16 @@ while option != 5 :
     if option == 1:
         showCars()
 
-    if option == 2:
+    elif option == 2:
         showBikes()
 
-    if option == 3:
+    elif option == 3:
         calculateRental(input("\nWhich model: "), int(input("\nHow many days: ")))
 
-    if option == 4:
+    elif option == 4:
         changeRental(input("\nWhich model: "), int(input("\nNew rental price: ")))
 
-    if option > 5 or option < 1:
+    elif option > 5 or option < 1:
         print("That is not a valid option!")
 
 print("Thank you for using Bob's Car Rental Service!")
