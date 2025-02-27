@@ -71,6 +71,17 @@ def showBikes ():
         show_vehicle_info(bike)
     print(divider)
 
+def calculateRental(Vehicle, days):
+    for vehicle in myBikes:
+        if Vehicle == vehicle.model:
+            return vehicle.calculate_rental_cost(days)
+    
+    for vehicle in myCars:
+        if Vehicle == vehicle.model:
+            return vehicle.calculate_rental_cost(days)
+    
+    return None
+
 divider = "=============================================="
 
 car1 = Car ("Honda", "CRV", "2003", 10, 5)
@@ -94,6 +105,10 @@ while option != 5 :
 
     if option == 2:
         showBikes()
+
+    if option == 3:
+        print(calculateRental(input("\nWhich model: "), int(input("\nHow many days: "))))
+
 
 
 
